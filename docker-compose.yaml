@@ -1,0 +1,13 @@
+version: '3.0'
+
+services: 
+    dante:
+        image: vlakam/docker-dante-multiuser
+        container_name: dante
+        ports:
+            - $SOCKS_PORT:1080
+        logging:
+            driver: "json-file"
+            options:
+                max-size: "10m"
+                max-file: "3"
